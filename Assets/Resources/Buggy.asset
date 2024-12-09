@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0c8539fb9b9fb46b6c0606bbb2568b, type: 3}
+  m_Name: Buggy
+  m_EditorClassIdentifier: 
+  _name: Buggy
+  _thumbnail: {fileID: 21300000, guid: d1d35cb8a0d9ca945aaf7cbf1408dc60, type: 3}
+  _militaryObject: {fileID: 3974024944767540895, guid: d78ae544e87ce3c4e86611843badb6c9, type: 3}

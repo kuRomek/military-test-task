@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1274555131342684203}
   - component: {fileID: 6302485733192913631}
   - component: {fileID: 8126691480839507123}
+  - component: {fileID: 227635527793154184}
   m_Layer: 5
   m_Name: LevelMenuButton
   m_TagString: Untagged
@@ -125,6 +126,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &227635527793154184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165891581285881203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 811f13b0e45dd8e4393e5a5cdb587f45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rowNumber: {fileID: 8517845746221774664}
+  _name: {fileID: 4372003799012718456}
+  _creationTime: {fileID: 3972385949320019235}
+  _loadLevelButton: {fileID: 8126691480839507123}
 --- !u!1 &2475920291863657053
 GameObject:
   m_ObjectHideFlags: 0

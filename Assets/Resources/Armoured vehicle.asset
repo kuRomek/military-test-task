@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0c8539fb9b9fb46b6c0606bbb2568b, type: 3}
+  m_Name: Armoured vehicle
+  m_EditorClassIdentifier: 
+  _name: Armoured vehicle
+  _thumbnail: {fileID: 21300000, guid: 34204180130448347a8186d1f3a44ce2, type: 3}
+  _militaryObject: {fileID: 6896309823097351257, guid: d923041e735379c4ea834a04b2f1862a, type: 3}

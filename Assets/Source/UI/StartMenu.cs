@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class StartMenu : UIMenu
 {
     [SerializeField] private MapSelectionMenu _mapSelectionMenu;
-    [SerializeField] private MapEditorMenu _mapEditorMenu;
+    [SerializeField] private MapEditorMainMenu _mapEditorMenu;
     [SerializeField] private Button _mapSelectionButton;
     [SerializeField] private Button _mapEditorButton;
 
