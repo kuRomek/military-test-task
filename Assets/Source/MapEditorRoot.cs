@@ -9,45 +9,15 @@ public class MapEditorRoot : MonoBehaviour
     [SerializeField] private MapEditorRuntimeMenu _editorUI;
 
     private ObjectDragger _objectDragger;
+    private Grid _grid;
 
     private void Awake()
     {
-        string[] files = Directory.GetFiles(Application.persistentDataPath + "/Temp/");
+        InitMap();
 
-        Grid grid;
-        
-        if (files.Length > 0)
-        {
-            grid = MapSerializer.LoadMap(Path.GetFileNameWithoutExtension(files[0]));
-
-            if (grid == null)
-            {
-                grid = new Grid(_terrain);
-            }
-            else
-            {
-                File.Delete(files[0]);
-
-                for (int i = 0; i < grid.MilitaryObjects.GetLength(0); i++)
-                {
-                    for (int j = 0; j < grid.MilitaryObjects.GetLength(1); j++)
-                    {
-                        if (grid.MilitaryObjects[i, j] != null)
-                        {
-                            MilitaryObject militaryObject = Instantiate(Resources.Load<MilitaryObjectContext>(grid.MilitaryObjects[i, j]).MilitaryObjectPrefab, grid.CalculateWorldPosition(i, j), Quaternion.identity);
-                            militaryObject.SetMapEditorMode();
-                        }
-                    }
-                }
-            }
-        }
-        else
-        {
-            grid = new Grid(_terrain);
-        }
-
-        _objectDragger = new ObjectDragger(_inputController, grid, _militaryObjectsUILoader.GiveAllMilitaryUIElements());
-        _editorUI.Init(grid);
+        _objectDragger = new ObjectDragger(_inputController, _grid, _militaryObjectsUILoader.GiveAllMilitaryUIElements());
+        _editorUI.Init(_grid);
+        _inputController.Init(_objectDragger);
     }
 
     private void OnEnable()
@@ -58,5 +28,40 @@ public class MapEditorRoot : MonoBehaviour
     private void OnDisable()
     {
         _objectDragger.Disable();
+    }
+
+    private void InitMap()
+    {
+        string[] files = Directory.GetFiles(Application.persistentDataPath + "/Temp/");
+
+        if (files.Length > 0)
+        {
+            _grid = MapSerializer.LoadMap(Path.GetFileNameWithoutExtension(files[0]));
+
+            if (_grid == null)
+            {
+                _grid = new Grid(_terrain);
+            }
+            else
+            {
+                File.Delete(files[0]);
+
+                for (int i = 0; i < _grid.MilitaryObjects.GetLength(0); i++)
+                {
+                    for (int j = 0; j < _grid.MilitaryObjects.GetLength(1); j++)
+                    {
+                        if (_grid.MilitaryObjects[i, j] != null)
+                        {
+                            MilitaryObject militaryObject = Instantiate(Resources.Load<MilitaryObjectContext>(_grid.MilitaryObjects[i, j]).MilitaryObjectPrefab, _grid.CalculateWorldPosition(i, j), Quaternion.identity);
+                            militaryObject.SetMapEditorMode();
+                        }
+                    }
+                }
+            }
+        }
+        else
+        {
+            _grid = new Grid(_terrain);
+        }
     }
 }

@@ -33,6 +33,8 @@ public class ObjectDragger : IActivatable
         _playerInputController.DragCanceled -= OnButtonClicked;
     }
 
+    public bool DraggingObject => _draggingObject != null;
+
     private void OnMilitaryObjectSelected(MilitaryObject militaryObject)
     {
         if (_draggingObject == null)

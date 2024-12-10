@@ -37,7 +37,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""MouseClick"",
+                    ""name"": ""DragStarted"",
                     ""type"": ""Button"",
                     ""id"": ""8bcb855a-2523-495a-a63e-9e0cdab74067"",
                     ""expectedControlType"": ""Button"",
@@ -46,22 +46,13 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""CameraMovement"",
+                    ""name"": ""CameraDragging"",
                     ""type"": ""Value"",
-                    ""id"": ""db9e109c-318a-4ea1-a97a-5e054d083733"",
+                    ""id"": ""73b07fa5-c206-491b-add1-bb060e9d9d88"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""CameraRotating"",
-                    ""type"": ""Button"",
-                    ""id"": ""cd9538fd-2075-4b72-97a7-d73a2092962f"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -94,7 +85,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""PlayerEditor"",
-                    ""action"": ""MouseClick"",
+                    ""action"": ""DragStarted"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -105,97 +96,31 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""PlayerEditor"",
-                    ""action"": ""MouseClick"",
+                    ""action"": ""DragStarted"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""22d7fda5-9a58-44f4-ae53-677a353aca2c"",
-                    ""path"": ""2DVector"",
+                    ""name"": """",
+                    ""id"": ""0ca84b22-5816-444a-b388-5a80b8828f0b"",
+                    ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CameraMovement"",
-                    ""isComposite"": true,
+                    ""action"": ""CameraDragging"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""4e9cfb90-2481-44eb-97ee-124b8c4eb42b"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PlayerEditor"",
-                    ""action"": ""CameraMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""58b199a9-3317-4cb5-9f79-07a36c5553b3"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PlayerEditor"",
-                    ""action"": ""CameraMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""1a921d55-fce6-4d3a-886d-e58b327e2edc"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PlayerEditor"",
-                    ""action"": ""CameraMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""9789c3ed-56e4-4fe7-bac0-1617938079a9"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PlayerEditor"",
-                    ""action"": ""CameraMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""09204726-758d-4ef7-8ec0-727b4301ceff"",
-                    ""path"": ""1DAxis"",
+                    ""name"": """",
+                    ""id"": ""ddc878ef-bc4f-4277-bcbf-71826b5c8d5d"",
+                    ""path"": ""<Touchscreen>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CameraRotating"",
-                    ""isComposite"": true,
+                    ""action"": ""CameraDragging"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""02218e78-7304-4100-9e3e-40d1e78d5027"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PlayerEditor"",
-                    ""action"": ""CameraRotating"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""07eaf333-39bc-49b6-880b-4249c881c145"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PlayerEditor"",
-                    ""action"": ""CameraRotating"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -227,9 +152,8 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Dragging = m_Player.FindAction("Dragging", throwIfNotFound: true);
-        m_Player_MouseClick = m_Player.FindAction("MouseClick", throwIfNotFound: true);
-        m_Player_CameraMovement = m_Player.FindAction("CameraMovement", throwIfNotFound: true);
-        m_Player_CameraRotating = m_Player.FindAction("CameraRotating", throwIfNotFound: true);
+        m_Player_DragStarted = m_Player.FindAction("DragStarted", throwIfNotFound: true);
+        m_Player_CameraDragging = m_Player.FindAction("CameraDragging", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -292,17 +216,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Dragging;
-    private readonly InputAction m_Player_MouseClick;
-    private readonly InputAction m_Player_CameraMovement;
-    private readonly InputAction m_Player_CameraRotating;
+    private readonly InputAction m_Player_DragStarted;
+    private readonly InputAction m_Player_CameraDragging;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
         public PlayerActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Dragging => m_Wrapper.m_Player_Dragging;
-        public InputAction @MouseClick => m_Wrapper.m_Player_MouseClick;
-        public InputAction @CameraMovement => m_Wrapper.m_Player_CameraMovement;
-        public InputAction @CameraRotating => m_Wrapper.m_Player_CameraRotating;
+        public InputAction @DragStarted => m_Wrapper.m_Player_DragStarted;
+        public InputAction @CameraDragging => m_Wrapper.m_Player_CameraDragging;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -315,15 +237,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Dragging.started += instance.OnDragging;
             @Dragging.performed += instance.OnDragging;
             @Dragging.canceled += instance.OnDragging;
-            @MouseClick.started += instance.OnMouseClick;
-            @MouseClick.performed += instance.OnMouseClick;
-            @MouseClick.canceled += instance.OnMouseClick;
-            @CameraMovement.started += instance.OnCameraMovement;
-            @CameraMovement.performed += instance.OnCameraMovement;
-            @CameraMovement.canceled += instance.OnCameraMovement;
-            @CameraRotating.started += instance.OnCameraRotating;
-            @CameraRotating.performed += instance.OnCameraRotating;
-            @CameraRotating.canceled += instance.OnCameraRotating;
+            @DragStarted.started += instance.OnDragStarted;
+            @DragStarted.performed += instance.OnDragStarted;
+            @DragStarted.canceled += instance.OnDragStarted;
+            @CameraDragging.started += instance.OnCameraDragging;
+            @CameraDragging.performed += instance.OnCameraDragging;
+            @CameraDragging.canceled += instance.OnCameraDragging;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -331,15 +250,12 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Dragging.started -= instance.OnDragging;
             @Dragging.performed -= instance.OnDragging;
             @Dragging.canceled -= instance.OnDragging;
-            @MouseClick.started -= instance.OnMouseClick;
-            @MouseClick.performed -= instance.OnMouseClick;
-            @MouseClick.canceled -= instance.OnMouseClick;
-            @CameraMovement.started -= instance.OnCameraMovement;
-            @CameraMovement.performed -= instance.OnCameraMovement;
-            @CameraMovement.canceled -= instance.OnCameraMovement;
-            @CameraRotating.started -= instance.OnCameraRotating;
-            @CameraRotating.performed -= instance.OnCameraRotating;
-            @CameraRotating.canceled -= instance.OnCameraRotating;
+            @DragStarted.started -= instance.OnDragStarted;
+            @DragStarted.performed -= instance.OnDragStarted;
+            @DragStarted.canceled -= instance.OnDragStarted;
+            @CameraDragging.started -= instance.OnCameraDragging;
+            @CameraDragging.performed -= instance.OnCameraDragging;
+            @CameraDragging.canceled -= instance.OnCameraDragging;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -369,8 +285,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnDragging(InputAction.CallbackContext context);
-        void OnMouseClick(InputAction.CallbackContext context);
-        void OnCameraMovement(InputAction.CallbackContext context);
-        void OnCameraRotating(InputAction.CallbackContext context);
+        void OnDragStarted(InputAction.CallbackContext context);
+        void OnCameraDragging(InputAction.CallbackContext context);
     }
 }

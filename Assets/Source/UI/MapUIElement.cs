@@ -11,17 +11,22 @@ public class MapUIElement : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _name;
     [SerializeField] private TextMeshProUGUI _creationTime;
     [SerializeField] private Button _loadLevelButton;
+    [SerializeField] private Button _deleteLevelButton;
 
     private bool _isForPlaying = false;
 
+    public event Action MapDeleted;
+
     private void OnEnable()
     {
-        _loadLevelButton.onClick.AddListener(OnButtonClicked);
+        _loadLevelButton.onClick.AddListener(LoadLevel);
+        _deleteLevelButton.onClick.AddListener(DeleteLevel);
     }
 
     private void OnDisable()
     {
         _loadLevelButton.onClick.RemoveAllListeners();
+        _deleteLevelButton.onClick.RemoveAllListeners();
     }
 
     public void Init(int rowNumber, Data data, bool isForPlaying)
@@ -32,7 +37,7 @@ public class MapUIElement : MonoBehaviour
         _creationTime.text = data.CreationTime;
     }
 
-    private void OnButtonClicked()
+    private void LoadLevel()
     {
         File.Copy(Application.persistentDataPath + "/Maps/" + _name.text + ".dat", 
                   Application.persistentDataPath + "/Temp/" + _name.text + ".dat");
@@ -41,6 +46,12 @@ public class MapUIElement : MonoBehaviour
             SceneManager.LoadScene("GameRuntime");
         else
             SceneManager.LoadScene("MapEditor");
+    }
+
+    private void DeleteLevel()
+    {
+        File.Delete(Application.persistentDataPath + "/Maps/" + _name.text + ".dat");
+        MapDeleted?.Invoke();
     }
 
     public class Data

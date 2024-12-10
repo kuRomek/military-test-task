@@ -8,10 +8,18 @@ public static class MapSerializer
 {
     private const string DateFormat = "yyyy.MM.dd_HH.mm.ss";
 
-    public static void SaveMap(Grid grid)
+    public static void SaveMap(Grid grid, string mapName)
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/Maps/" + DateTime.Now.ToString(DateFormat) + ".dat");
+
+        FileStream file;
+        string filePath = Application.persistentDataPath + "/Maps/" + DateTime.Now.ToString(DateFormat) + ".dat";
+
+        if (Directory.Exists(filePath))
+            file = File.Open(Application.persistentDataPath + "/Maps/" + mapName + ".dat", FileMode.Create);
+        else
+            file = File.Create(Application.persistentDataPath + "/Maps/" + mapName + ".dat");
+        
         bf.Serialize(file, grid);
         file.Close();
         Debug.Log("Game data saved!");
